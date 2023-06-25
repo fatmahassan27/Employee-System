@@ -1,0 +1,31 @@
+﻿@model DepartmentVM
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="block-header">
+    <h2>Create New Department</h2>
+</div>
+ 
+<form asp-controller="Department" asp-action="Create" class="form-group" >
+    <label asp-for="Name">Department Name</label>
+    <input  type="text"  calss="form-control" asp-for="Name" />
+    <span asp-validation-for="Name" class="text-danger"> </span>
+    <br />
+
+    <label asp-for="Code">Department Code</label>
+    <input type="text" calss="form-control" asp-for="Code" />
+    <span asp-validation-for="Code" class="text-danger"> </span>
+
+    <br />
+    <centr>
+        <input type="submit" value="save" class="btn btn-primary" />
+        <input type="reset" value="Cancel" class="btn btn-danger" />
+
+    </centr>
+
+</form>
+@section JQValidation{
+    <script src="~/plugins/jquery-validation/jquery.validate.js"></script>
+    <script src="~/plugins/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}

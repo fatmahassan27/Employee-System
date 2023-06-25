@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewData["Title"] = "TestSignalR";
+    Layout = "~/Views/LayOut/Mylayout.cshtml";
+}
+
+<h2>TestSignalR</h2>
+<div class="container">
+    <span> Enter your name : </span><br />
+    <input  type="text" id="txtuser"/><br />
+    <span> Enter your message : </span><br />
+    <input type="text" id="msguser" />
+    <br />
+    <button type="submit" id="btnsend"> Send </button>
+
+    <div class="col-md-6">
+        <hr3>Send message</hr3>
+        <ul id="list" class="alert-info">
+
+        </ul>
+    </div>
+
+
+
+
+</div>
+
+<script src="d:\programming\tasks\demo.pl\demo.pl\wwwroot\lib\signalr\dist\browser\signalr.js"></script>

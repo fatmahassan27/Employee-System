@@ -15,17 +15,24 @@ namespace Demo.BL.Helper
         {
             try
             {
-                var smtp = new SmtpClient("smtp.gmail.com", 587);
-                    smtp.EnableSsl = true;
-                    smtp.Credentials = new NetworkCredential("fatma3499@gmail.com", "2772000fatma");
-                    smtp.Send("fatma3499@gmail.com", "fatma3499@gmail.com", mail.Title, mail.Message);
+                var smtp = new SmtpClient("smtp.gmail.com", 587 );
+                smtp.EnableSsl = true;
+                smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+                smtp.UseDefaultCredentials = false;
+                smtp.Timeout = 100000;
+                smtp.Credentials = new NetworkCredential("fatima663562@gmail.com", "FATMAHASSAN2772000FMZAHA");
+                MailMessage mailMessage = new MailMessage();
+                mailMessage.Subject= mail.Email;
+                mailMessage.IsBodyHtml = true;
+                mailMessage.Body = $"<h3>{mail.Message}</h3>";
+                smtp.Send(mailMessage);
 
                 return "Succed";
 
             }
             catch 
             {             
-                return "faild";
+                return "Faild";
             }
         }
     }

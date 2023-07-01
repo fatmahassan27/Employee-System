@@ -7,11 +7,14 @@
     <h2>Send Mails</h2>
 
 </div>
+<br /> <br />
+<h3 class="text-danger">@TempData["Msg"]</h3>
+
 <form class="form-group" asp-controller="Mail" asp-action="SendMail">
 
-    <label asp-for="Title">Title</label>
-    <input type="text" asp-for="Title" class="form-control" placeholder="Title" />
-    <span asp-validation-for="Title" class="text-danger"></span>
+    <label asp-for="Email">Email</label>
+    <input type="email" asp-for="Email" class="form-control" placeholder="Email" />
+    <span asp-validation-for="Email" class="text-danger"></span>
     <br />
 
     <label asp-for="Message">Message</label>

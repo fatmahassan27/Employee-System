@@ -10,10 +10,9 @@ namespace Demo.BL.ModelVM
     public class MailVM
     {
         [Required(ErrorMessage = "Title Required")]
+        public string Email {get;set;}
 
-        public string Title {get;set;}
         [Required(ErrorMessage = "Message Required")]
-
         public string Message { get; set; }
     }
 }

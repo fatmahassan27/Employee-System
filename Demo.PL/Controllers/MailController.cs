@@ -5,6 +5,7 @@ using System.Net;
 using System.Net.Mail;
 
 
+
 namespace Demo.PL.Controllers
 {
     public class MailController : Controller
@@ -20,17 +21,17 @@ namespace Demo.PL.Controllers
             try
             {
                 if (ModelState.IsValid)
-                {
-
+                { 
+                   
                     TempData["Msg"] = MailSender.SenderMail(mail);
-                    return RedirectToAction(nameof(SendMail));
+                    return RedirectToAction("SendMail");
                 }
                 else
                     return View();
             }
             catch (Exception ex) 
             {
-                TempData["Msg"] = "faild";
+                TempData["Msg"] = "Faild";
                 return View();
             }
         }

@@ -15,13 +15,13 @@ namespace Demo.BL.Helper
         {
             try
             {
-                var smtp = new SmtpClient("smtp.gmail.com", 587 );
+                var smtp = new SmtpClient("smtp.office365.com", 587 );
                 smtp.EnableSsl = true;
                 smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
                 smtp.UseDefaultCredentials = false;
                 smtp.Timeout = 100000;
-                smtp.Credentials = new NetworkCredential("fatima663562@gmail.com", "FATMAHASSAN2772000FMZAHA");
-                MailMessage mailMessage = new MailMessage();
+                smtp.Credentials = new NetworkCredential("fatmahassan1951@outlook.com", "FATMAHASSAN2772000","fatma");
+                MailMessage mailMessage = new MailMessage( "fatmahassan1951@outlook.com",mail.Email );
                 mailMessage.Subject= mail.Email;
                 mailMessage.IsBodyHtml = true;
                 mailMessage.Body = $"<h3>{mail.Message}</h3>";
